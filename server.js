@@ -67,11 +67,15 @@ app.patch("/api/items/:id", (req, res, next) => {
   // we are looking for.
 
   /**
-   * {
-   *    id: 8,
-   *    item: "something",
-   *    completed: false
-   * }
+   * [
+   *  {
+   *    id: 1, item: "bread", completed: false;
+   *  }, {
+   *    id: 2, item: "milk", completed: false;
+   *  }, {
+   *    id: 3, items: "cheese", completed: false;
+   *  }
+   * ]
    */
   const itemToComplete = items.find((item) => item.id === itemID);
 
@@ -83,7 +87,7 @@ app.patch("/api/items/:id", (req, res, next) => {
 
     // This will toggle the complete checkbox. In a real world
     // I should probably copy over the values of item to this new value.
-    itemToComplete.completed = !itemToComplete.completed;
+    itemsToComplete.completed = !itemsToComplete.completed;
 
     // We'll take the array of items we have, and SPLICE the new
     // item in place of the old one.
