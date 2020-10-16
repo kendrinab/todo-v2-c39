@@ -83,7 +83,7 @@ app.patch("/api/items/:id", (req, res, next) => {
 
     // This will toggle the complete checkbox. In a real world
     // I should probably copy over the values of item to this new value.
-    itemsToComplete.completed = !itemsToComplete.completed;
+    itemToComplete.completed = !itemToComplete.completed;
 
     // We'll take the array of items we have, and SPLICE the new
     // item in place of the old one.
