@@ -65,12 +65,29 @@ app.patch("/api/items/:id", (req, res, next) => {
   // we'll have to go through the items array
   // and find the particular item with the ID
   // we are looking for.
+
+  /**
+   * {
+   *    id: 8,
+   *    item: "something",
+   *    completed: false
+   * }
+   */
   const itemToComplete = items.find((item) => item.id === itemID);
 
   // If we find the item with the ID
   if (itemToComplete) {
     // We'll need to edit the item with the
     // thing that was in the request body
+    const indexOfItemToComplete = items.indexOf(itemToComplete);
+
+    // This will toggle the complete checkbox. In a real world
+    // I should probably copy over the values of item to this new value.
+    itemsToComplete.completed = !itemsToComplete.completed;
+
+    // We'll take the array of items we have, and SPLICE the new
+    // item in place of the old one.
+    items.splice(indexOfItemToComplete, 1, itemToComplete);
 
     // return the json of the item to complete
     res.json(itemToComplete);
@@ -87,3 +104,8 @@ app.patch("/api/items/:id", (req, res, next) => {
 app.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
 });
+
+/**
+ * index 0: id: 1, milk
+ * index 1: id: 3, cheese
+ */
