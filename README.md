@@ -1,6 +1,19 @@
+# Purpose
+
 This is a simple application that creates a RESTful Express API. It will give users the ability to CREATE, READ, UPDATE, and DELETE items from a To Do list.
 
-- In order to view all of the To Do items in this application, make an HTTP GET request to /api/items. Your sample response body will look something like the following:
+# Setup
+
+In Terminal, run the following commands:
+
+- `git clone git@github.com:wyncode/first_express_server.git`
+- `cd first_express_server`
+- `yarn`
+- To run your server, `yarn run dev`
+
+# Making requests to the API
+
+- In order to view all of the To Do items in this application, make an HTTP `GET` request to `/api/items.` You should receive an HTTP 200 response, and your sample response body will look something like the following:
 
 ```
 [
@@ -17,11 +30,10 @@ This is a simple application that creates a RESTful Express API. It will give us
 ]
 ```
 
-- To create a new To Do item in this application, make an HTTP POST request to /api/items. The body of your POST request should look like this:
+- To create a new To Do item in this application, make an HTTP `POST` request to `/api/items`. You should receive an HTTP 201 response, and the body of your `POST` request should look like this:
 
 ```
 {
-    "id": 3,
     "item": "the name of the thing we're including",
     "completed": false
 }
@@ -37,14 +49,13 @@ This is a simple application that creates a RESTful Express API. It will give us
 }
 ```
 
-- In order to edit the contents of a single To Do item, make a PUT request to /api/items/:id. A sample of the request should look like the following:
+- In order to edit the contents of a single To Do item, make a `PUT` request to `/api/items/:id`. You should receive an HTTP 200 response, and a sample of the request body should look like the following:
 
 ```
 {
-	"id": 2,
 	"item": "get some beer",
 	"completed": true
 }
 ```
 
-- In order to delete a single item from our To Do items API, make a DELETE request to /api/items/:id. The item that will be deleted will be returned.
+- In order to delete a single item from our To Do items API, make a `DELETE` request to `/api/items/:id`. You should receive an HTTP 200 response, and the item that will be deleted will be returned.
