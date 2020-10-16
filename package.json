@@ -1,0 +1,14 @@
+{
+  "name": "todo-v2-c39",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:kendrinab/todo-v2-c39.git",
+  "author": "kendrinab <kendra.barrera01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}
